@@ -1,0 +1,285 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 92% 6% 2%;
+    grid-template-rows: 70px;
+    grid-template-areas: " left-side right-side sobra ";
+    position: fixed;
+}
+
+.left-side{
+    width: 100%;
+    height: 100%;
+    grid-area: left-side;
+    /* background-color: blue; */
+}
+
+.right-side{
+    width: 100%;
+    height: 100%;
+    grid-area: right-side;
+    /* background-color: red; */
+    cursor: pointer;
+    padding-left: 7px;
+}
+
+.sobra{
+    grid-area:sobra;
+    /* background-color: yellow;     */
+}
+
+.hamb{
+    content: '';
+    width: 5%;
+    height: 8%;
+    background-color: black;
+    position: absolute;
+    
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.hamb::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    margin-top: -15px;
+    border-radius: 5px;
+}
+
+
+.hamb::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+
+/********************************************  CSS DEL MENU  ********************************************************/
+
+.menu_visible{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    /* transform: translateX(-100%); */
+    left:0%;
+}
+
+.menu_invisible{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    /* transform: translateX(-100%); */
+    left:-100%;
+}
+
+
+
+.fadeIn{
+    animation-name: fadeIn;
+    animation-duration: .75s;
+}
+
+.fadeOut{
+    animation-name: fadeOut;
+    animation-duration: .75s;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0 ;
+        transform: translateX(-100%);
+        left: -100%;
+    }
+    100%{
+        opacity: 1 ;
+        transform: translateX(0%);
+        left: 0%;
+    }
+}
+
+@keyframes fadeOut{
+    
+    0%{
+        opacity: 1 ;
+        transform: translateX(0%);
+        left: 0%;
+    }
+
+    100%{
+        opacity: 0 ;
+        transform: translateX(-100%);
+        left: -100%;
+        
+    }
+}
+
+@keyframes slideFromLeftI1{
+    from{left:-40%}
+    to{left:0%}
+}
+
+@keyframes slideFromLeftI2{
+    from{left:-40%}
+    to{left:0%}
+}
+@keyframes slideFromLeftI3{
+    from{left:-40%}
+    to{left:0%}
+}
+@keyframes slideFromLeftI4{
+    from{left:-40%}
+    to{left:0%}
+}
+
+
+
+
+.sub_menu{
+    width: 100%;
+    height: 70px;
+    /* background-color: orange; */
+    display: grid;
+    grid-template-columns: 92% 6% 2%;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas: 
+    " menu_left-side menu_right-side sobra-2 "
+    "items items sobra-2";
+    
+}
+
+ .menu_left-side{
+    grid-area: menu_left-side;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+
+}
+
+.menu_right-side{
+    grid-area: menu_right-side;
+    width: 100%;
+    height: 100%;
+    /* background-color: pink; */
+    cursor: pointer;
+}
+
+.sobra2{
+    grid-area: sobra-2;
+    /* background-color: cyan; */
+}
+
+
+.menu_hamb{
+    content: '';
+    width: 65px;
+    height: 6px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    transform: rotate(-45deg);
+    margin-top: 35px;
+    margin-left: 10px;
+    
+    
+} 
+
+.menu_hamb::after{
+    content: '';
+    width: 65px;
+    height: 6px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    transform: rotate(90deg);    
+}
+
+
+.items{
+    grid-area: items;
+    /* background-color: darkgreen; */
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    /* display: flex; */
+}
+
+.item{
+    /* border:  1px solid purple; */
+    font-family: fantasy;
+    width: 30%;
+    font-size: 40px;
+    text-align: center;
+    margin:auto;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    
+}
+
+.item1{
+    margin-top: 100px;
+    animation-name: slideFromLeftI1;
+    animation-duration: 1s;
+}
+
+.item2{
+    animation-name: slideFromLeftI2;
+    animation-duration: 1s;
+    /* animation-delay: 0.5s; */
+}
+.item3{
+    animation-name: slideFromLeftI3;
+    animation-duration: 1s;
+    /* animation-delay: 1s; */
+}
+.item4{
+    animation-name: slideFromLeftI4;
+    animation-duration: 1s;
+    /* animation-delay: 1.5s; */
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+
+
+.item::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: yellow;
+    position: absolute;
+    margin-top: 44px;
+    top: 30%;
+    left:50%;
+
+    border-radius: 8px;
+    transition: all .5s ease;
+    
+}
+
+.item:hover::after{
+    width: 100%;
+    left: 0%;
+    /* color: yellow; */
+}
+
+
